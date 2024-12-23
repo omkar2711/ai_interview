@@ -17,9 +17,9 @@ const QuestionSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
     : [mockInterviewQuestion]; 
 
   return (
-    <div className="flex flex-col justify-between p-5 border rounded-lg my-1 bg-secondary">
+    <div className="flex flex-col  p-5 border rounded-lg my-1 bg-secondary">
       {/* Question Navigation */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {questions.map((question, index) => (
           <h2
             key={index}
