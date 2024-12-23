@@ -41,7 +41,11 @@ const AddNewInterview = () => {
   Job Positions: ${jobPosition}, 
   Job Description: ${jobDesc}, 
   Years of Experience: ${jobExperience}. 
-  Based on this information, please provide 1 interview questions with answers in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
+  Based on this information, please provide 1 interview questions with answers in JSON format, ensuring "Question" and "Answer" are fields in the JSON the format should be 
+  {
+    "Question": "",
+    "Answer": ""
+  }.
 `;
 
     const result = await chatSession.sendMessage(InputPrompt);
@@ -83,15 +87,12 @@ const AddNewInterview = () => {
   return (
     <div>
       <div
-        className="w-full h-64 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#e62d3c] hover:bg-pink-50 transition-colors group"
+        className="p-10 rounded-lg border bg-secondary hover:scale-105 hover:shadow-sm transition-all cursor-pointer"
         onClick={() => setOpenDialog(true)}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-4">
-        <h2 className="text-lg font-medium text-gray-600 group-hover:text-[#e62d3c]">+ Add New</h2>
-        </div>
+        <h2 className=" text-lg text-center">+ Add New</h2>
       </div>
-      
-      <Dialog open={openDailog} onOpenChange={(isOpen) => setOpenDialog(isOpen)}>
+      <Dialog open={openDailog}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-2xl">
@@ -139,14 +140,13 @@ const AddNewInterview = () => {
                 </div>
                 <div className="flex gap-5 justify-end">
                   <Button
-                  className="border border-[#e62d3c] hover:bg-pink-50"
                     type="button"
                     variant="goast"
                     onClick={() => setOpenDialog(false)}
                   >
                     Cancel
                   </Button>
-                  <Button type="submit" disabled={loading} className="bg-[#e62d3c] text-white hover:bg-[#d41e2d] transition-colors">
+                  <Button type="submit" disabled={loading}>
                     {loading ? (
                       <>
                         <LoaderCircle className="animate-spin" />
