@@ -92,7 +92,7 @@ const AddNewInterview = () => {
       >
         <h2 className=" text-lg text-center">+ Add New</h2>
       </div>
-      <Dialog open={openDailog}>
+      <Dialog open={openDailog} onOpenChange={(isOpen) => setOpenDialog(isOpen)}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-2xl">
