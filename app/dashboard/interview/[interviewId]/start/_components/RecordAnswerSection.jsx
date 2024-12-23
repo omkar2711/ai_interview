@@ -99,12 +99,12 @@ const RecordAnswerSection = ({
       setLoading(true);
       const feedbackPrompt =
         "Question:" +
-        mockInterviewQuestion[activeQuestionIndex]?.Question +
+        mockInterviewQuestion.Question +
         ", User Answer:" +
         userAnswer +
         " , Depends on question and user answer for given interview question" +
         " please give us rating for answer and feedback as area of improvement if any " +
-        "in just 5 to 10 lines to improve it in JSON format with rating field and feedback field";
+        "in just 3 to 5 lines to improve it in JSON format with rating field and feedback field";
 
       const result = await chatSession.sendMessage(feedbackPrompt);
 
@@ -124,8 +124,8 @@ const RecordAnswerSection = ({
 
       const resp = await db.insert(UserAnswer).values({
         mockIdRef: interviewData?.mockId,
-        question: mockInterviewQuestion[activeQuestionIndex]?.Question,
-        correctAns: mockInterviewQuestion[activeQuestionIndex]?.Answer,
+        question: mockInterviewQuestion.Question,
+        correctAns: mockInterviewQuestion.Answer,
         userAns: userAnswer,
         feedback: jsonFeedbackResp?.feedback,
         rating: jsonFeedbackResp?.rating,
