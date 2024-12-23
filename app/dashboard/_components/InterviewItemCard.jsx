@@ -34,7 +34,7 @@ const InterviewItemCard = ({interview}) => {
         </div>
         <div className="flex items-center text-gray-600">
           <Award className="w-4 h-4 mr-2" />
-          <span>5 questions </span>
+          <span>1 question </span>
         </div>
       </div>
 

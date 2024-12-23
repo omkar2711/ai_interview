@@ -41,7 +41,7 @@ const AddNewInterview = () => {
   Job Positions: ${jobPosition}, 
   Job Description: ${jobDesc}, 
   Years of Experience: ${jobExperience}. 
-  Based on this information, please provide 5 interview questions with answers in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
+  Based on this information, please provide 1 interview questions with answers in JSON format, ensuring "Question" and "Answer" are fields in the JSON.
 `;
 
     const result = await chatSession.sendMessage(InputPrompt);
@@ -91,7 +91,7 @@ const AddNewInterview = () => {
         </div>
       </div>
       
-      <Dialog open={openDailog}>
+      <Dialog open={openDailog} onOpenChange={(isOpen) => setOpenDialog(isOpen)}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-2xl">
